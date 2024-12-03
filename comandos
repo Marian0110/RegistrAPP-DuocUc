@@ -1,0 +1,5 @@
+libreria para qr de python:
+pip install qrcode[pil]
+
+user agent para detectar el dispositivo:
+pip install pyyaml user-agents

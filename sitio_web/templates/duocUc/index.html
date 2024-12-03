@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicitar Apk</title>
+</head>
+<body>
+    <h1>Welcome a nuestra aplicacion movil RegistraAPP</h1>
+    <p>
+        {% if apk_action == "install" %}
+            Haz clic en el botón para instalar la app:
+        {% else %}
+            Haz clic en el botón para descargar el APK:
+        {% endif %}
+    </p>
+    
+    <a href="{{ apk_link }}" download>Descargar/Instalar</a>
+    
+    {% if not apk_action == "install" %}
+        <p>Escanea este código QR desde tu dispositivo movil para instalar la app:</p>
+        <img src="data:image/png;base64,{{ qr_image_data }}" alt="codigo QR">
+    {% endif %}
+</body>
+</html>
