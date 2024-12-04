@@ -14,7 +14,9 @@ def index(request):
     # genera el codigo QR cuando no es dispo movil
     qr_image_data = None
     if not is_mobile:
-        apk_url = "http://192.168.23.187:8000/" + apk_link #ruta de ip local para acceder desde movil y levantar el sitio web para escanear el qr
+        scheme = request.scheme
+        host = request.get_host() # Devuelve 'host:puerto' automáticamente
+        apk_url = f"{scheme}://{host}{apk_link}" # Para construir la URL completa
         qr = qrcode.QRCode(
             version=1,
             error_correction=qrcode.constants.ERROR_CORRECT_L,

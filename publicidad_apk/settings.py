@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-rstv#5=(lvpkab3)a26vt#4k6eq*uje6gdlkn&4ejv282)uo&s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.23.187', 'localhost', '127.0.0.1'] #IP para ingresar desde un dispo android
+ALLOWED_HOSTS = ['192.168.23.187', 'localhost', '127.0.0.1', '192.168.100.154'] #IP para ingresar desde un dispo android
 
 
 # Application definition
