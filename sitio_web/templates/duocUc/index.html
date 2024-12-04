@@ -3,23 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publicitar Apk</title>
+    <title>Descargar RegistrApp</title> 
+    <!--cdn bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <!--cdn js-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!--STYLESHEET-->
+    <link href="../../static/duocUc/css/index.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Welcome a nuestra aplicacion movil RegistraAPP</h1>
-    <p>
-        {% if apk_action == "install" %}
-            Haz clic en el botón para instalar la app:
-        {% else %}
-            Haz clic en el botón para descargar el APK:
+    <!--barra de navegacion-->
+    <nav class="navbar navbar-light bg-light">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="#">
+                <img src="../../static/duocUc/images/logoRegistrApp.png" alt="Logo RegistrApp">
+                <h3 class="navbar-title">RegistrApp</h3>
+            </a>
+        </div>
+    </nav>
+    <!--seccion de descarga-->
+    <div class="download-section">
+        <img src="../../static/duocUc/images/Photoroom.png" alt="Logo RegistrApp" class="download-logo">
+        <h2 class="download-title">Descargar RegistrApp APK ultima versión</h2>
+        <p>Android · Gratis</p>
+        <table class="table table-striped custom-table">
+            <tbody>
+                <tr>
+                    <td class="custom-td">Versión</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td class="custom-td">Tamaño</td>
+                    <td>25.41 MB</td>
+                </tr>
+                <tr>
+                    <td class="custom-td">Fecha de lanzamiento</td>
+                    <td>14/12/2024</td>
+                </tr>
+                <tr>
+                    <td class="custom-td">Nombre de la app</td>
+                    <td>RegistrApp</td>
+                </tr>
+                <tr>
+                    <td class="custom-td">Versión minima de android</td>
+                    <td>Android 5.1 (Lollipop MR1)</td>
+                </tr>
+                <tr>
+                    <td class="custom-td">Paquete</td>
+                    <td>io.ionic.starter</td>
+                </tr>
+            </tbody>
+        </table>        
+        <a href="{{ apk_link }}" download class="btn btn-primary download-btn">
+            {% if apk_action == "install" %}
+                INSTALAR APK
+            {% else %}
+                DESCARGAR APK
+            {% endif %}
+        </a>
+    </div>
+    <!--seccion mockup y codigo QR-->
+    <section class="section-mockup">
+        <div>
+            <img src="../../static/duocUc/images/PhoneMockup.png" alt="Mockup RegistrApp" class="mockup-image">
+        </div>
+        {% if not apk_action == "install" %}
+        <div class="section-QR">
+            <p>Escanea este QR para instalar RegistrApp en tu dispositivo:</p>
+            <img src="data:image/png;base64,{{ qr_image_data }}" alt="Código QR">
+        </div>
         {% endif %}
-    </p>
-    
-    <a href="{{ apk_link }}" download>Descargar/Instalar</a>
-    
-    {% if not apk_action == "install" %}
-        <p>Escanea este código QR desde tu dispositivo movil para instalar la app:</p>
-        <img src="data:image/png;base64,{{ qr_image_data }}" alt="codigo QR">
+    </section>
+    <!--Seccion informativa--> 
+    <section class="section-informative">
+        <div class="des-content">
+            <h2 style="text-align: center;">Caracterizticas de la APK</h2> <br>
+            <h3></h3>
+            <p></p>
+        </div>
+    </section>
+   <!--Contenedor imagenes interfaz movil--> 
+   {% if apk_action == "install" %}
+       <div class="image-scroll">
+            <img src="../../static/duocUc/images/splash1.png" alt="Splash">
+            <img src="../../static/duocUc/images/login.png" alt="Iniciar sesión">
+            <img src="../../static/duocUc/images/registro.png" alt="Registro">
+            <img src="../../static/duocUc/images/principal.png" alt="Principal">
+            <img src="../../static/duocUc/images/actualizacionSede.png" alt="Actualización Sede">
+            <img src="../../static/duocUc/images/actualizacionDatos.png" alt="Actualización Datos">
+            <img src="../../static/duocUc/images/sedes.png" alt="Sedes">
+            <img src="../../static/duocUc/images/scanner.png" alt="Scanner Asignaturas">
+            <img src="../../static/duocUc/images/perfil.png" alt="Perfil">
+            <img src="../../static/duocUc/images/preferencia.png" alt="Preferencia">
+            <img src="../../static/duocUc/images/cerrarSesion.png" alt="Cerrar Sesión">
+       </div>
+   {% endif %}
+    <!--Contenedor imagenes interfaz sitio web--> 
+    {% if apk_action == "download" %}
+    <section class="section-web">
+        <img src="../../static/duocUc/images/splash1.png" alt="Splash">
+        <img src="../../static/duocUc/images/login.png" alt="Iniciar sesión">
+        <img src="../../static/duocUc/images/registro.png" alt="Registro">
+        <img src="../../static/duocUc/images/principal.png" alt="Principal">
+        <img src="../../static/duocUc/images/actualizacionSede.png" alt="Actualización Sede">
+        <img src="../../static/duocUc/images/actualizacionDatos.png" alt="Actualización Datos">
+        <img src="../../static/duocUc/images/sedes.png" alt="Sedes">
+        <img src="../../static/duocUc/images/scanner.png" alt="Scanner Asignaturas">
+        <img src="../../static/duocUc/images/perfil.png" alt="Perfil">
+        <img src="../../static/duocUc/images/preferencia.png" alt="Preferencia">
+        <img src="../../static/duocUc/images/cerrarSesion.png" alt="Cerrar Sesión">
+    </section>
     {% endif %}
+    <section class="section-description">
+        <div class="description-content">
+            <h2>Descarga RegistrApp APK e instalalo en tu android</h2><br>
+            <h4>Pasos a seguir:</h4>
+            <ul>
+                <li>1. Habilita la opción de instalar aplicaciones de fuentes desconocidas en tu dispositivo.</li>
+                <li>
+                    {% if apk_action == "install" %}
+                        2. Instala el APK desde el sitio web, presionando el botón "Instalar APK".
+                    {% else %}
+                        2. Descarga el APK desde el sitio web, presionando el botón "Descargar APK".
+                    {% endif %}
+                </li>
+                <li>3. Una vez completada la descarga, toca el archivo APK de RegistrApp para iniciar el proceso de instalación.</li>
+                <li>4. Encontrarás el ícono de la aplicación RegistrApp en la pantalla de inicio de tu dispositivo, ahora si, puedes comenzar a usarla.</li>
+            </ul>
+            <p>RegistrApp te ayudará a gestionar tu asistencia y mucho más.</p>
+        </div>
+    </section>
 </body>
 </html>
