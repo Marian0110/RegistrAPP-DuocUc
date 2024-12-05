@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import qrcode
+import qrcode # type: ignore
 import base64
 from io import BytesIO  # con esto maneja las imagenes en memoria y asi crea el qr
 
