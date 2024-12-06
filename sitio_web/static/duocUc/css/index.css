@@ -57,7 +57,6 @@ body, html {
     flex-direction: column;
     align-items: center;
     padding: 20px 20px; 
-    background-color: #f8f9fa;
     width: 100%;
 }
 
@@ -99,24 +98,12 @@ body, html {
     background-color: #0B253E;
 }
 
-/* Contenedor imagenes moviles*/
-
-.image-scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-}
-
-.image-scroll img {
-    display: block;
-    max-height: 300px;
-    width: auto;
-    margin: 0 auto 20px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+/*Carousel imagenes interfaz movil*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 40%;
+      margin: auto;
+  }
 
 /* Contenedor imagenes sitio web*/
 .section-web{
@@ -146,8 +133,7 @@ body, html {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 50px 15%;
-    background-color: #f8f9fa;
+    padding: 30px 15%;
 }
 
 .section-mockup img {
@@ -160,7 +146,6 @@ body, html {
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    background-color: #f8f9fa;
 }
 
 .section-QR img {
@@ -179,7 +164,7 @@ body, html {
     }
     .section-mockup img {
         width: 300px;
-        height: 200px;
+        height: 220px;
     }
 
     .section-QR {
@@ -194,7 +179,7 @@ body, html {
     }
 
     .section-mockup img {
-        height: 450px;
+        height: 500px;
     }
 
     .section-QR img {
@@ -206,10 +191,10 @@ body, html {
 /*Tabla de especificaciones apk*/
 .custom-table {
     margin: 20px auto; 
-    width: 50%; 
     border-collapse: collapse;
     text-align:left;
     font-size: medium;
+    width: 50% !important;
 }
 
 .custom-table td {
@@ -223,8 +208,7 @@ body, html {
 
 /*Secciones informativas*/
 .section-description {
-    padding: 30px 20px;
-    background-color: #f8f9fa;
+    padding: 10px 20px;
     text-align:left;
 }
 
@@ -241,7 +225,7 @@ body, html {
 
 .description-content ul li {
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .description-content p {
@@ -255,18 +239,20 @@ body, html {
 }
 
 .section-informative {
-    padding: 30px 20px;
+    padding: 10px 20px;
     color: #333;
     text-align:left;
-    background-color: #f8f9fa;
 }
 
 .des-content {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    font-size: 16px;
 }
 
 .custom-p {
     font-weight: bold;
+    color: #000;
+    font-size: 20px;
 }
